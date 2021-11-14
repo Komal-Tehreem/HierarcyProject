@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "@emotion/styled";
+import React from 'react';
+import styled from '@emotion/styled';
 
 const Card = (props) => {
   const StyledNode = styled.div({
@@ -32,7 +32,7 @@ const Card = (props) => {
   return (<StyledCard color={props.color}>
     <StyledNode>
       <img
-        alt="img"
+        alt='img'
         src={props.img}
         width={45}
         height={45}

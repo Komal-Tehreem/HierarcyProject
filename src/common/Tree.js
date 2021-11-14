@@ -1,8 +1,14 @@
 import React from 'react';
-import { Tree, TreeNode } from "react-organizational-chart";
+import { Tree, TreeNode } from 'react-organizational-chart';
+import styled from '@emotion/styled';
 import Card from './Card';
 
 const TreeComponent = (props) => {
+  const Div = styled.div({
+    position: 'relative',
+    top: '30px'
+  });
+
   const getColor = (status) => {
     switch(status) {
       case 'warning':
@@ -34,19 +40,14 @@ const TreeComponent = (props) => {
 
   const { data } = props;
 
-  return (<div
-    style={{
-      position: "relative",
-      top: "30px"
-    }}
-  >
+  return (<Div>
     <Tree
-      lineHeight={"60px"}
+      lineHeight={'60px'}
       label={Card({ ...data, color: getColor(data.status) })}
     >
     {treeNodes(data)}
     </Tree>
-  </div>
+  </Div>
 )};
 
 export default TreeComponent;

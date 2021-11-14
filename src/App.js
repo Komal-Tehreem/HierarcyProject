@@ -4,9 +4,9 @@ import Organisation from './organisation/Organisation.view';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className='App'>
+      <header className='App-header'>
+        <img src={logo} className='App-logo' alt='logo' />
         Komal's Project
       </header>
       <Organisation />
