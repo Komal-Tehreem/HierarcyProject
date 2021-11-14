@@ -22,11 +22,15 @@ const TreeComponent = (props) => {
         key={childKey}
         label={Card({
           ...childValue,
-          color: getColor(childValue.status)
+          color: getColor(childValue.status),
+          manyChildren: value.manyChildren
         })}
       >
         {childValue?.children?.length &&
-          treeNodes(childValue)
+          treeNodes({
+            ...childValue,
+            manyChildren: value.manyChildren || childValue?.children?.length > 3
+          })
         }
       </TreeNode>
     );
@@ -44,7 +48,7 @@ const TreeComponent = (props) => {
       lineHeight={"60px"}
       label={Card({ ...data, color: getColor(data.status) })}
     >
-    {treeNodes(data)}
+    {treeNodes({...data, manyChildren: data?.children?.length > 3})}
     </Tree>
   </div>
 )};
